@@ -24,4 +24,5 @@ permitir que participantes adicionem músicas à fila de forma simples e organiz
 
 A implementação utiliza um arquivo `.feature` escrito em **Gherkin**, descrevendo o comportamento esperado.
 
-📄 Caminho do arquivo:
+📄 Caminho do arquivo .feature:
+`src/test/resources/features/adicionar_musica.feature`
