@@ -12,7 +12,7 @@ seus cenários e a automação do comportamento esperado.
 ## 📚 História de Usuário Selecionada
 
 **Como** um Participante  
-**Eu quero** adicionar músicas à fila usando o link do YouTube  
+**Eu quero** adicionar músicas à fila usando o nome da música  
 **Para que** eu entre na ordem de execução da sessão
 
 Essa história representa uma funcionalidade essencial do sistema de karaokê:  
