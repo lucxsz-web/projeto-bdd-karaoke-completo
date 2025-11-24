@@ -9,7 +9,7 @@ Feature: Adição de música na fila do karaokê
 
   Scenario: Adicionar música válida à fila
     Given que estou na tela da sessão
-    When insiro o link "https://youtube.com/watch?v=abcd1234"
+    When insiro o link "https://www.youtube.com/watch?v=fWNaR-rxAic"
     And clico em "Adicionar à Fila"
     Then a música deve aparecer na fila
     And deve estar associada ao usuário "Lucas"
