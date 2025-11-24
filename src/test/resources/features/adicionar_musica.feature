@@ -1,6 +1,6 @@
 Feature: Adição de música na fila do karaokê
   Como um participante
-  Quero adicionar músicas à fila usando links do YouTube
+  Quero adicionar músicas à fila usando o nome delas pelo Youtube
   Para que eu entre na ordem de execução da sessão
 
   Background:
@@ -9,7 +9,7 @@ Feature: Adição de música na fila do karaokê
 
   Scenario: Adicionar música válida à fila
     Given que estou na tela da sessão
-    When insiro o link "https://www.youtube.com/watch?v=fWNaR-rxAic"
+    When insiro o nome "Midnight Sun - Zara Larsson" 
     And clico em "Adicionar à Fila"
     Then a música deve aparecer na fila
     And deve estar associada ao usuário "Lucas"
