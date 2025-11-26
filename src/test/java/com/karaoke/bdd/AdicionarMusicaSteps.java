@@ -9,7 +9,7 @@ public class AdicionarMusicaSteps {
 
     private FilaService filaService = FilaService.getInstance();
     private Music resultado;
-    private String linkInserido;
+    private String nomeInserido;   
     private String mensagemErro;
 
     @Dado("que existe uma sessão ativa com ID {string}")
@@ -27,15 +27,15 @@ public class AdicionarMusicaSteps {
         assertTrue(filaService.sessaoAtiva());
     }
 
-    @Quando("insiro o link {string}")
-    public void insiroOLink(String link) {
-        this.linkInserido = link;
+    @Quando("insiro o nome {string}")
+    public void insiroONome(String nomeMusica) {
+        this.nomeInserido = nomeMusica;  
     }
 
     @Quando("clico em {string}")
     public void clicoEm(String botao) {
         try {
-            resultado = filaService.adicionarMusica(linkInserido, "Lucas");
+            resultado = filaService.adicionarMusica(nomeInserido, "Lucas");               
             mensagemErro = null;
         } catch (IllegalArgumentException ex) {
             resultado = null;
@@ -59,3 +59,4 @@ public class AdicionarMusicaSteps {
         assertEquals(expected, mensagemErro);
     }
 }
+
