@@ -29,27 +29,25 @@ public class FilaService {
         participantes.add(nome);
     }
 
-    public Music adicionarMusica(String url, String usuario) {
-        if (url == null || !isValidYoutubeUrl(url)) {
-            throw new IllegalArgumentException("Link inválido");
+    public Music adicionarMusica(String titulo, String usuario) {
+        if (titulo == null || titulo.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nome da música inválido");
         }
-        // Prevent duplication of same video url
+
+        // evita músicas duplicadas pelo título
         for (Music m : fila) {
-            if (m.getUrl().equals(url)) {
+            if (m.getTitulo().equalsIgnoreCase(titulo)) {
                 throw new IllegalArgumentException("Música já está na fila");
             }
         }
-        Music m = new Music(url, usuario, "Título mock");
+
+        Music m = new Music(titulo, usuario); 
         fila.add(m);
         return m;
-    }
-
-    private boolean isValidYoutubeUrl(String url) {
-        if (url == null) return false;
-        return url.contains("youtube.com/watch?v=") || url.contains("youtu.be/");
     }
 
     public List<Music> getFila() {
         return Collections.unmodifiableList(fila);
     }
 }
+
