@@ -1,30 +1,33 @@
 package com.karaoke.core;
 
 public class Music {
-    private String url;
+    private String titulo;  
     private String usuario;
-    private String titulo;
 
-    public Music(String url, String usuario, String titulo) {
-        this.url = url;
-        this.usuario = usuario;
+    public Music(String titulo, String usuario) {
         this.titulo = titulo;
+        this.usuario = usuario;
     }
 
-    public String getUrl() { return url; }
-    public String getUsuario() { return usuario; }
-    public String getTitulo() { return titulo; }
+    public String getTitulo() { 
+        return titulo; 
+    }
+
+    public String getUsuario() { 
+        return usuario; 
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Music)) return false;
         Music m = (Music) o;
-        return url.equals(m.url) && usuario.equals(m.usuario);
+        return titulo.equals(m.titulo) && usuario.equals(m.usuario);
     }
 
     @Override
     public int hashCode() {
-        return url.hashCode() * 31 + usuario.hashCode();
+        return titulo.hashCode() * 31 + usuario.hashCode();
     }
 }
+
